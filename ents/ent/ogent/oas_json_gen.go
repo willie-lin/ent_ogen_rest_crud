@@ -87,10 +87,13 @@ func (s CreateTodoReq) Encode(e *jx.Writer) {
 		e.Str(s.Title)
 	}
 	{
-		e.Comma()
-
-		e.RawStr("\"done\"" + ":")
-		e.Bool(s.Done)
+		if s.Done.Set {
+			e.Comma()
+		}
+		if s.Done.Set {
+			e.RawStr("\"done\"" + ":")
+			s.Done.Encode(e)
+		}
 	}
 	e.ObjEnd()
 }
@@ -122,11 +125,9 @@ func (s *CreateTodoReq) Decode(d *jx.Decoder) error {
 				return errors.Wrap(err, "decode field \"title\"")
 			}
 		case "done":
-			requiredBitSet[0] |= 1 << 1
 			if err := func() error {
-				v, err := d.Bool()
-				s.Done = bool(v)
-				if err != nil {
+				s.Done.Reset()
+				if err := s.Done.Decode(d); err != nil {
 					return err
 				}
 				return nil
@@ -143,7 +144,7 @@ func (s *CreateTodoReq) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000011,
+		0b00000001,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.
@@ -809,10 +810,13 @@ func (s TodoCreate) Encode(e *jx.Writer) {
 		e.Str(s.Title)
 	}
 	{
-		e.Comma()
-
-		e.RawStr("\"done\"" + ":")
-		e.Bool(s.Done)
+		if s.Done.Set {
+			e.Comma()
+		}
+		if s.Done.Set {
+			e.RawStr("\"done\"" + ":")
+			s.Done.Encode(e)
+		}
 	}
 	e.ObjEnd()
 }
@@ -857,11 +861,9 @@ func (s *TodoCreate) Decode(d *jx.Decoder) error {
 				return errors.Wrap(err, "decode field \"title\"")
 			}
 		case "done":
-			requiredBitSet[0] |= 1 << 2
 			if err := func() error {
-				v, err := d.Bool()
-				s.Done = bool(v)
-				if err != nil {
+				s.Done.Reset()
+				if err := s.Done.Decode(d); err != nil {
 					return err
 				}
 				return nil
@@ -878,7 +880,7 @@ func (s *TodoCreate) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000111,
+		0b00000011,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.
@@ -934,10 +936,13 @@ func (s TodoList) Encode(e *jx.Writer) {
 		e.Str(s.Title)
 	}
 	{
-		e.Comma()
-
-		e.RawStr("\"done\"" + ":")
-		e.Bool(s.Done)
+		if s.Done.Set {
+			e.Comma()
+		}
+		if s.Done.Set {
+			e.RawStr("\"done\"" + ":")
+			s.Done.Encode(e)
+		}
 	}
 	e.ObjEnd()
 }
@@ -982,11 +987,9 @@ func (s *TodoList) Decode(d *jx.Decoder) error {
 				return errors.Wrap(err, "decode field \"title\"")
 			}
 		case "done":
-			requiredBitSet[0] |= 1 << 2
 			if err := func() error {
-				v, err := d.Bool()
-				s.Done = bool(v)
-				if err != nil {
+				s.Done.Reset()
+				if err := s.Done.Decode(d); err != nil {
 					return err
 				}
 				return nil
@@ -1003,7 +1006,7 @@ func (s *TodoList) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000111,
+		0b00000011,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.
@@ -1059,10 +1062,13 @@ func (s TodoRead) Encode(e *jx.Writer) {
 		e.Str(s.Title)
 	}
 	{
-		e.Comma()
-
-		e.RawStr("\"done\"" + ":")
-		e.Bool(s.Done)
+		if s.Done.Set {
+			e.Comma()
+		}
+		if s.Done.Set {
+			e.RawStr("\"done\"" + ":")
+			s.Done.Encode(e)
+		}
 	}
 	e.ObjEnd()
 }
@@ -1107,11 +1113,9 @@ func (s *TodoRead) Decode(d *jx.Decoder) error {
 				return errors.Wrap(err, "decode field \"title\"")
 			}
 		case "done":
-			requiredBitSet[0] |= 1 << 2
 			if err := func() error {
-				v, err := d.Bool()
-				s.Done = bool(v)
-				if err != nil {
+				s.Done.Reset()
+				if err := s.Done.Decode(d); err != nil {
 					return err
 				}
 				return nil
@@ -1128,7 +1132,7 @@ func (s *TodoRead) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000111,
+		0b00000011,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.
@@ -1184,10 +1188,13 @@ func (s TodoUpdate) Encode(e *jx.Writer) {
 		e.Str(s.Title)
 	}
 	{
-		e.Comma()
-
-		e.RawStr("\"done\"" + ":")
-		e.Bool(s.Done)
+		if s.Done.Set {
+			e.Comma()
+		}
+		if s.Done.Set {
+			e.RawStr("\"done\"" + ":")
+			s.Done.Encode(e)
+		}
 	}
 	e.ObjEnd()
 }
@@ -1232,11 +1239,9 @@ func (s *TodoUpdate) Decode(d *jx.Decoder) error {
 				return errors.Wrap(err, "decode field \"title\"")
 			}
 		case "done":
-			requiredBitSet[0] |= 1 << 2
 			if err := func() error {
-				v, err := d.Bool()
-				s.Done = bool(v)
-				if err != nil {
+				s.Done.Reset()
+				if err := s.Done.Decode(d); err != nil {
 					return err
 				}
 				return nil
@@ -1253,7 +1258,7 @@ func (s *TodoUpdate) Decode(d *jx.Decoder) error {
 	// Validate required fields.
 	var failures []validate.FieldError
 	for i, mask := range [1]uint8{
-		0b00000111,
+		0b00000011,
 	} {
 		if result := (requiredBitSet[i] & mask) ^ mask; result != 0 {
 			// Mask only required fields and check equality to mask using XOR.

@@ -82,6 +82,10 @@ type ListTodoParams struct {
 	ItemsPerPage OptInt
 }
 
+type MarkDoneParams struct {
+	ID int
+}
+
 type ReadTodoParams struct {
 	// ID of the Todo.
 	ID int

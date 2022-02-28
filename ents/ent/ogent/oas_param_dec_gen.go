@@ -186,6 +186,44 @@ func decodeListTodoParams(args [0]string, r *http.Request) (ListTodoParams, erro
 	return params, nil
 }
 
+func decodeMarkDoneParams(args [1]string, r *http.Request) (MarkDoneParams, error) {
+	var (
+		params MarkDoneParams
+	)
+	// Decode path: id.
+	{
+		param := args[0]
+		if len(param) > 0 {
+			d := uri.NewPathDecoder(uri.PathDecoderConfig{
+				Param:   "id",
+				Value:   param,
+				Style:   uri.PathStyleSimple,
+				Explode: false,
+			})
+
+			if err := func() error {
+				s, err := d.DecodeValue()
+				if err != nil {
+					return err
+				}
+
+				c, err := conv.ToInt(s)
+				if err != nil {
+					return err
+				}
+
+				params.ID = c
+				return nil
+			}(); err != nil {
+				return params, err
+			}
+		} else {
+			return params, errors.New("path: id: not specified")
+		}
+	}
+	return params, nil
+}
+
 func decodeReadTodoParams(args [1]string, r *http.Request) (ReadTodoParams, error) {
 	var (
 		params ReadTodoParams

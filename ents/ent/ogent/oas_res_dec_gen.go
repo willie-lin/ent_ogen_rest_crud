@@ -444,6 +444,15 @@ func decodeListTodoResponse(resp *http.Response, span trace.Span) (res ListTodoR
 	}
 }
 
+func decodeMarkDoneResponse(resp *http.Response, span trace.Span) (res MarkDoneNoContent, err error) {
+	switch resp.StatusCode {
+	case 204:
+		return MarkDoneNoContent{}, nil
+	default:
+		return res, validate.UnexpectedStatusCode(resp.StatusCode)
+	}
+}
+
 func decodeReadTodoResponse(resp *http.Response, span trace.Span) (res ReadTodoRes, err error) {
 	switch resp.StatusCode {
 	case 200:

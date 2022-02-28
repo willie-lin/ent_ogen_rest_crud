@@ -164,17 +164,37 @@ func (s *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			}
 
 			// Param: "id"
-			// Leaf parameter
-			args[0] = elem
-			elem = ""
+			// Match until "/"
+			idx := strings.IndexByte(elem, '/')
+			if idx < 0 {
+				idx = len(elem)
+			}
+			args[0] = elem[:idx]
+			elem = elem[idx:]
 
 			if len(elem) == 0 {
-				// Leaf: UpdateTodo
 				s.handleUpdateTodoRequest([1]string{
 					args[0],
 				}, w, r)
 
 				return
+			}
+			switch elem[0] {
+			case '/': // Prefix: "/done"
+				if l := len("/done"); len(elem) >= l && elem[0:l] == "/done" {
+					elem = elem[l:]
+				} else {
+					break
+				}
+
+				if len(elem) == 0 {
+					// Leaf: MarkDone
+					s.handleMarkDoneRequest([1]string{
+						args[0],
+					}, w, r)
+
+					return
+				}
 			}
 		}
 	case "POST":
@@ -305,16 +325,35 @@ func (s *Server) FindRoute(method, path string) (r Route, _ bool) {
 			}
 
 			// Param: "id"
-			// Leaf parameter
-			args[0] = elem
-			elem = ""
+			// Match until "/"
+			idx := strings.IndexByte(elem, '/')
+			if idx < 0 {
+				idx = len(elem)
+			}
+			args[0] = elem[:idx]
+			elem = elem[idx:]
 
 			if len(elem) == 0 {
-				// Leaf: UpdateTodo
 				r.name = "UpdateTodo"
 				r.args = args
 				r.count = 1
 				return r, true
+			}
+			switch elem[0] {
+			case '/': // Prefix: "/done"
+				if l := len("/done"); len(elem) >= l && elem[0:l] == "/done" {
+					elem = elem[l:]
+				} else {
+					break
+				}
+
+				if len(elem) == 0 {
+					// Leaf: MarkDone
+					r.name = "MarkDone"
+					r.args = args
+					r.count = 1
+					return r, true
+				}
 			}
 		}
 	case "POST":

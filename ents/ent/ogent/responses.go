@@ -11,7 +11,7 @@ func NewTodoCreate(e *ent.Todo) *TodoCreate {
 	return &TodoCreate{
 		ID:    e.ID,
 		Title: e.Title,
-		Done:  e.Done,
+		Done:  NewOptBool(e.Done),
 	}
 }
 
@@ -40,7 +40,7 @@ func NewTodoList(e *ent.Todo) *TodoList {
 	return &TodoList{
 		ID:    e.ID,
 		Title: e.Title,
-		Done:  e.Done,
+		Done:  NewOptBool(e.Done),
 	}
 }
 
@@ -69,7 +69,7 @@ func NewTodoRead(e *ent.Todo) *TodoRead {
 	return &TodoRead{
 		ID:    e.ID,
 		Title: e.Title,
-		Done:  e.Done,
+		Done:  NewOptBool(e.Done),
 	}
 }
 
@@ -98,7 +98,7 @@ func NewTodoUpdate(e *ent.Todo) *TodoUpdate {
 	return &TodoUpdate{
 		ID:    e.ID,
 		Title: e.Title,
-		Done:  e.Done,
+		Done:  NewOptBool(e.Done),
 	}
 }
 

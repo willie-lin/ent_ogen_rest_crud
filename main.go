@@ -11,6 +11,15 @@ import (
 	"net/http"
 )
 
+type handler struct {
+	*ogent.OgentHandler
+	client *ent.Client
+}
+
+func (h handler) MarkDone(ctx context.Context, params ogent.MarkDoneParams) (ogent.MarkDoneNoContent, error) {
+	return ogent.MarkDoneNoContent{}, h.client.Todo.UpdateOneID(params.ID).SetDone(true).Exec(ctx)
+}
+
 func main() {
 
 	// Create ent client
@@ -24,12 +33,15 @@ func main() {
 		log.Fatal(err)
 	}
 
+	h := handler{
+		OgentHandler: ogent.NewOgentHandler(client),
+		client:       client,
+	}
+
 	// Start listening
-	srv, _ := ogent.NewServer(ogent.NewOgentHandler(client))
+	srv, _ := ogent.NewServer(h)
 	if err := http.ListenAndServe(":8080", srv); err != nil {
 		log.Fatal(err)
 	}
-
-
 
 }

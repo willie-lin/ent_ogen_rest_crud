@@ -82,8 +82,7 @@
                   }
                 },
                 "required": [
-                  "title",
-                  "done"
+                  "title"
                 ]
               }
             }
@@ -255,6 +254,31 @@
           }
         }
       }
+    },
+    "/todos/{id}/done": {
+      "description": "Mark an item as done",
+      "patch": {
+        "tags": [
+          "Todo"
+        ],
+        "summary": "Marks a todo item as done.",
+        "operationId": "markDone",
+        "responses": {
+          "204": {
+            "description": "Item marked as done"
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "schema": {
+            "type": "integer"
+          },
+          "required": true
+        }
+      ]
     }
   },
   "components": {
@@ -274,8 +298,7 @@
         },
         "required": [
           "id",
-          "title",
-          "done"
+          "title"
         ]
       },
       "TodoCreate": {
@@ -293,8 +316,7 @@
         },
         "required": [
           "id",
-          "title",
-          "done"
+          "title"
         ]
       },
       "TodoList": {
@@ -312,8 +334,7 @@
         },
         "required": [
           "id",
-          "title",
-          "done"
+          "title"
         ]
       },
       "TodoRead": {
@@ -331,8 +352,7 @@
         },
         "required": [
           "id",
-          "title",
-          "done"
+          "title"
         ]
       },
       "TodoUpdate": {
@@ -350,8 +370,7 @@
         },
         "required": [
           "id",
-          "title",
-          "done"
+          "title"
         ]
       }
     },

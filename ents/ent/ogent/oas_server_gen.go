@@ -90,6 +90,10 @@ type Handler interface {
 	//
 	// GET /todos
 	ListTodo(ctx context.Context, params ListTodoParams) (ListTodoRes, error)
+	// MarkDone implements markDone operation.
+	//
+	// PATCH /todos/{id}/done
+	MarkDone(ctx context.Context, params MarkDoneParams) (MarkDoneNoContent, error)
 	// ReadTodo implements readTodo operation.
 	//
 	// Finds the Todo with the requested ID and returns it.

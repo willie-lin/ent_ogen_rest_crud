@@ -31,7 +31,9 @@ func (h *OgentHandler) CreateTodo(ctx context.Context, req CreateTodoReq) (Creat
 	b := h.client.Todo.Create()
 	// Add all fields.
 	b.SetTitle(req.Title)
-	b.SetDone(req.Done)
+	if v, ok := req.Done.Get(); ok {
+		b.SetDone(v)
+	}
 	// Add all edges.
 	// Persist to storage.
 	e, err := b.Save(ctx)

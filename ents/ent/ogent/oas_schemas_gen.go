@@ -71,8 +71,8 @@ var (
 )
 
 type CreateTodoReq struct {
-	Title string "json:\"title\""
-	Done  bool   "json:\"done\""
+	Title string  "json:\"title\""
+	Done  OptBool "json:\"done\""
 }
 
 // DeleteTodoNoContent is response for DeleteTodo operation.
@@ -83,6 +83,9 @@ func (*DeleteTodoNoContent) deleteTodoRes() {}
 type ListTodoOKApplicationJSON []TodoList
 
 func (ListTodoOKApplicationJSON) listTodoRes() {}
+
+// MarkDoneNoContent is response for MarkDone operation.
+type MarkDoneNoContent struct{}
 
 // NewOptBool returns new OptBool with value set to v.
 func NewOptBool(v bool) OptBool {
@@ -271,34 +274,34 @@ func (*R500) updateTodoRes() {}
 
 // Ref: #/components/schemas/TodoCreate
 type TodoCreate struct {
-	ID    int    "json:\"id\""
-	Title string "json:\"title\""
-	Done  bool   "json:\"done\""
+	ID    int     "json:\"id\""
+	Title string  "json:\"title\""
+	Done  OptBool "json:\"done\""
 }
 
 func (*TodoCreate) createTodoRes() {}
 
 // Ref: #/components/schemas/TodoList
 type TodoList struct {
-	ID    int    "json:\"id\""
-	Title string "json:\"title\""
-	Done  bool   "json:\"done\""
+	ID    int     "json:\"id\""
+	Title string  "json:\"title\""
+	Done  OptBool "json:\"done\""
 }
 
 // Ref: #/components/schemas/TodoRead
 type TodoRead struct {
-	ID    int    "json:\"id\""
-	Title string "json:\"title\""
-	Done  bool   "json:\"done\""
+	ID    int     "json:\"id\""
+	Title string  "json:\"title\""
+	Done  OptBool "json:\"done\""
 }
 
 func (*TodoRead) readTodoRes() {}
 
 // Ref: #/components/schemas/TodoUpdate
 type TodoUpdate struct {
-	ID    int    "json:\"id\""
-	Title string "json:\"title\""
-	Done  bool   "json:\"done\""
+	ID    int     "json:\"id\""
+	Title string  "json:\"title\""
+	Done  OptBool "json:\"done\""
 }
 
 func (*TodoUpdate) updateTodoRes() {}
