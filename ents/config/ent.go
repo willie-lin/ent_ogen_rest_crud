@@ -3,9 +3,8 @@ package config
 import (
 	"context"
 	"fmt"
-	"github.com/willie-lin/ent_ogen_rest_crud/ents/ent"
+	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent"
 	"log"
-
 	"os"
 	"time"
 
