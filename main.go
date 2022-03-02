@@ -7,6 +7,7 @@ import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	_ "github.com/mattn/go-sqlite3"
+	"github.com/willie-lin/ent_ogen_rest_crud/ents/config"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent/ogent"
@@ -104,4 +105,8 @@ func main() {
 	//}
 
 	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func init() {
+	config.InitConfig()
 }
