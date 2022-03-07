@@ -11,7 +11,7 @@ require (
 	github.com/go-faster/jx v0.32.1
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/uuid v1.3.0
-	github.com/labstack/echo/v4 v4.6.3
+	github.com/labstack/echo/v4 v4.7.0
 	github.com/lib/pq v1.10.4
 	github.com/mattn/go-sqlite3 v1.14.11
 	github.com/ogen-go/ogen v0.17.1
