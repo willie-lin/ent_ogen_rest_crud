@@ -2,7 +2,7 @@ package service
 
 import (
 	"context"
-	"github.com/willie-lin/ent_ogen_rest_crud/ents/config"
+	"github.com/willie-lin/ent_ogen_rest_crud/ents/database"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent/todo"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent/user"
@@ -13,10 +13,12 @@ type TodoOps struct {
 	client *ent.Client
 }
 
+var Client, _ = database.NewClient()
+
 func NewTodoOps(ctx context.Context) *TodoOps {
 	return &TodoOps{
 		ctx:    ctx,
-		client: config.GetClient(),
+		client: Client,
 	}
 }
 
