@@ -22,6 +22,18 @@ type DatabaseCfg struct {
 	Type     string `json:"type"`
 }
 
+var (
+	client *ent.Client
+)
+
+func GetClient() *ent.Client {
+	return client
+}
+
+func SetClient(newClient *ent.Client) {
+	client = newClient
+}
+
 func NewClient() (*ent.Client, error) {
 
 	//fmt.Println(viper.GetString("database.username"))
@@ -34,7 +46,6 @@ func NewClient() (*ent.Client, error) {
 		Type:     viper.GetString("database.type"),
 	}
 
-	var client *ent.Client
 	var err error
 	//drv, err := sql.Open("mysql", "root:root1234@tcp(127.0.0.1:3306)/terminal?charset=utf8&parseTime=true")
 	switch dfg.Type {
