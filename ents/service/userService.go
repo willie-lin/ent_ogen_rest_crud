@@ -2,6 +2,7 @@ package service
 
 import (
 	"context"
+	"github.com/willie-lin/ent_ogen_rest_crud/ents/database"
 	"github.com/willie-lin/ent_ogen_rest_crud/ents/database/ent"
 )
 
@@ -10,12 +11,12 @@ type UserOps struct {
 	client *ent.Client
 }
 
-//func NewUserOps(ctx context.Context) *UserOps {
-//	return &UserOps{
-//		ctx:    ctx,
-//		client: Client1,
-//	}
-//}
+func NewUserOps(ctx context.Context) *UserOps {
+	return &UserOps{
+		ctx:    ctx,
+		client: database.GetClient(),
+	}
+}
 
 func (r *UserOps) UsersGetAll() ([]*ent.User, error) {
 

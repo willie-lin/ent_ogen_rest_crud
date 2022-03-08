@@ -46,6 +46,9 @@ func NewClient() (*ent.Client, error) {
 		Type:     viper.GetString("database.type"),
 	}
 
+	var (
+		client *ent.Client
+	)
 	var err error
 	//drv, err := sql.Open("mysql", "root:root1234@tcp(127.0.0.1:3306)/terminal?charset=utf8&parseTime=true")
 	switch dfg.Type {

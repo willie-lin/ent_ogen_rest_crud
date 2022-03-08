@@ -13,12 +13,10 @@ type TodoOps struct {
 	client *ent.Client
 }
 
-var Client, _ = database.NewClient()
-
 func NewTodoOps(ctx context.Context) *TodoOps {
 	return &TodoOps{
 		ctx:    ctx,
-		client: Client,
+		client: database.GetClient(),
 	}
 }
 
