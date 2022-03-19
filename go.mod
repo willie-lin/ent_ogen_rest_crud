@@ -1,6 +1,6 @@
 module github.com/willie-lin/ent_ogen_rest_crud
 
-go 1.17
+go 1.18
 
 require (
 	entgo.io/contrib v0.2.1-0.20220210075301-2b75bf138815
