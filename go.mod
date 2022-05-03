@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	entgo.io/contrib v0.2.1-0.20220210075301-2b75bf138815
-	entgo.io/ent v0.10.0
+	entgo.io/ent v0.10.2-0.20220502113020-4ac82f5bb3f0
 	github.com/ariga/ogent v0.0.0-20220217081816-c4d586fc1c16
 	github.com/bykof/gostradamus v1.0.4
 	github.com/go-faster/errors v0.5.0
@@ -12,7 +12,7 @@ require (
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/google/uuid v1.3.0
 	github.com/labstack/echo/v4 v4.7.0
-	github.com/lib/pq v1.10.4
+	github.com/lib/pq v1.10.5
 	github.com/mattn/go-sqlite3 v1.14.11
 	github.com/ogen-go/ogen v0.17.1
 	github.com/spf13/viper v1.10.1
@@ -23,7 +23,7 @@ require (
 )
 
 require (
-	ariga.io/atlas v0.3.3 // indirect
+	ariga.io/atlas v0.3.8-0.20220502090649-c495296ad28c // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/apparentlymart/go-textseg/v13 v13.0.0 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
@@ -40,7 +40,7 @@ require (
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/mitchellh/go-wordwrap v1.0.1 // indirect
-	github.com/mitchellh/mapstructure v1.4.3 // indirect
+	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml v1.9.4 // indirect
 	github.com/segmentio/asm v1.1.3 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
