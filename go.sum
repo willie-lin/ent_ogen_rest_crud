@@ -1,11 +1,7 @@
-ariga.io/atlas v0.3.3 h1:eg38ZKUMn7M89uC+F3bUisqij4S628BMdCb2vGO43WA=
-ariga.io/atlas v0.3.3/go.mod h1:XcLUpQX7Cq4qtagEHIleq3MJaBeeJ76BS8doc4gkOJk=
 ariga.io/atlas v0.3.8-0.20220502090649-c495296ad28c h1:M/NbCWUVuokL/+l1nvwgEn6Knasu+AZp4KfBV33ys1s=
 ariga.io/atlas v0.3.8-0.20220502090649-c495296ad28c/go.mod h1:URT1boACQmnulqRF07NkSOEkzx/OmO/48AmVX7pPaJg=
 entgo.io/contrib v0.2.1-0.20220210075301-2b75bf138815 h1:VBZtzQqTOHvMVHbGHN1L0uJYq7GQFzenL5Xx04tk+ys=
 entgo.io/contrib v0.2.1-0.20220210075301-2b75bf138815/go.mod h1:oDXgxZMWGHZAQcuty41ndZahRrGKFmZHiSaV7YDjhvM=
-entgo.io/ent v0.10.0 h1:9cBomE1fh+WX34DPYQL7tDNAIvhKa3tXvwxuLyhYCMo=
-entgo.io/ent v0.10.0/go.mod h1:5bjIYdTizykmdtPY3knXrrGpxAh0cMjFfxdNnlNiUGU=
 entgo.io/ent v0.10.2-0.20220502113020-4ac82f5bb3f0 h1:qHA4+ANAzDj6BcDLxNgZuzKxFre/RI9r5wwsI2O+1M4=
 entgo.io/ent v0.10.2-0.20220502113020-4ac82f5bb3f0/go.mod h1:Zh61BPvB+cL6VWEyN8f1YoDacrMjQf2KDlDeX26xq2k=
 github.com/BurntSushi/toml v0.3.1 h1:WXkYYl6Yr3qBf1K79EBnL4mak0OimBfB0XUf9Vl28OQ=
@@ -73,8 +69,6 @@ github.com/labstack/echo/v4 v4.7.0 h1:8wHgZhoE9OT1NSLw6sfrX7ZGpWMtO5Zlfr68+BIo18
 github.com/labstack/echo/v4 v4.7.0/go.mod h1:xkCDAdFCIf8jsFQ5NnbK7oqaF/yU1A1X20Ltm0OvSks=
 github.com/labstack/gommon v0.3.1 h1:OomWaJXm7xR6L1HmEtGyQf26TEn7V6X88mktX9kee9o=
 github.com/labstack/gommon v0.3.1/go.mod h1:uW6kP17uPlLJsD3ijUYn3/M5bAxtlZhMI6m3MFxTMTM=
-github.com/lib/pq v1.10.4 h1:SO9z7FRPzA03QhHKJrH5BXA6HU1rS4V2nIVrrNC1iYk=
-github.com/lib/pq v1.10.4/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
 github.com/lib/pq v1.10.5 h1:J+gdV2cUmX7ZqL2B0lFcW0m+egaHC2V3lpO8nWxyYiQ=
 github.com/lib/pq v1.10.5/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
 github.com/magiconair/properties v1.8.5 h1:b6kJs+EmPFMYGkow9GiUyCyOvIwYetYJ3fSaWak/Gls=
@@ -89,8 +83,6 @@ github.com/mattn/go-sqlite3 v1.14.11/go.mod h1:NyWgC/yNuGj7Q9rpYnZvas74GogHl5/Z4
 github.com/mitchellh/go-wordwrap v0.0.0-20150314170334-ad45545899c7/go.mod h1:ZXFpozHsX6DPmq2I0TCekCxypsnAUbP2oI0UX1GXzOo=
 github.com/mitchellh/go-wordwrap v1.0.1 h1:TLuKupo69TCn6TQSyGxwI1EblZZEsQ0vMlAFQflz0v0=
 github.com/mitchellh/go-wordwrap v1.0.1/go.mod h1:R62XHJLzvMFRBbcrT7m7WgmE1eOyTSsCt+hzestvNj0=
-github.com/mitchellh/mapstructure v1.4.3 h1:OVowDSCllw/YjdLkam3/sm7wEtOy59d8ndGgCcyj8cs=
-github.com/mitchellh/mapstructure v1.4.3/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/mitchellh/mapstructure v1.5.0 h1:jeMsZIYE/09sWLaz43PL7Gy6RuMjD2eJVyuac5Z2hdY=
 github.com/mitchellh/mapstructure v1.5.0/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/ogen-go/ogen v0.17.1 h1:8dU7cQuNRJLjKabMHQ1OF1XTeyMEhIQxcJb6hvKFjyU=
